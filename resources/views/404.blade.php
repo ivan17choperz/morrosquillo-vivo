@@ -1,11 +1,10 @@
 @extends('layouts.main')
 
 @section('title')
-    Home
+    404 Not Found
 @endsection
 
+
 @section('content')
-    <div class="container">
-        <h2>Morrisquillo vivo</h2>
-    </div>
+    Pagina no encontrada
 @endsection

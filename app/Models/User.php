@@ -19,7 +19,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
+        'sex',
+        'address',
+        'phone',
         'email',
+        'username',
         'password',
     ];
 
@@ -42,4 +47,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    protected $attributes = [
+        'rol_id' => 2
+    ];
+
+    public function user_rol()
+    {
+        $this->hasOne(userRol::class);
+    }
 }
