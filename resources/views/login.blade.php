@@ -44,10 +44,10 @@
                 </div>
             </div>
             {{-- form --}}
-            <div class=" w-1/2  p-10 ">
-                <form action="/auth/login" class=" p-5" method="POST">
+            <div class=" w-1/2  p-5 ">
+                <form action="/auth/login" class="px-10" method="POST">
                     @csrf
-                    <h4 class="align-center font-bold pb-5">Iniciar Sesión</h4>
+                    <h4 class="font-bold pb-5 text-cyan-700">Iniciar Sesión</h4>
                     <div class="input-field col s12 l12 pb-5">
                         <input type="text" id="username" name="username" class="validate">
                         <label for="username">Nombre de Usuario</label>
@@ -56,19 +56,23 @@
                         <input type="password" id="password" name="password" class="validate">
                         <label for="password">Contraseña</label>
                     </div>
-                    @error('message')
-                        <p class="text-red-600 block text-center mb-5 p-3 border border-red-600 rounded">Usuario o Contraseña
-                            Incorrectos
+                    @if (session('loginError'))
+                        <p class="text-red-600 block p-3 mb-3 w-full border text-center  rounded border-red-600">Error
+                            {{ session('loginError') }}
                         </p>
-                    @enderror
+                    @endif
                     <button
                         class="w-full p-3 hover:bg-cyan-800 transition-all  text-white rounded shadow text-lg font-bold bg-cyan-500 ">Iniciar
                         Sesión</button>
                     <hr>
                     <div class="input-field col s12 l12 redirects-links-forms">
-                        <h6 class="font-bold">¿Aun no tienes cuenta?</h6>
+                        <h6 class="font-bold text-cyan-700">¿Aun no tienes cuenta?</h6>
                         <a href="/auth/register" class="cyan-text ">Crear Cuenta</a>
                     </div>
+                    <div class="input-field col s12 l12 redirects-links-forms">
+                        <a href="#" class="cyan-text  ">Olvidé mi constraseña</a>
+                    </div>
+
                 </form>
             </div>
 

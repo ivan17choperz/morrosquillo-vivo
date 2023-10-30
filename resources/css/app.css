@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* font styles globals */
 .font-bold {
     font-weight: 700;
@@ -16,18 +15,19 @@
     align-items: center;
     justify-content: center;
 }
-.redirects-links-forms{
+.redirects-links-forms {
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
 }
-.padding-form{
+.padding-form {
     padding: 20px 20px;
 }
 
 /* card */
 
-.container-courses{
-
+.card-action a {
+    color: white !important;
 }
+

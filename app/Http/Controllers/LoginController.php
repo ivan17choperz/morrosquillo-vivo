@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -19,6 +20,13 @@ class LoginController extends Controller
         ]);
         $username = $req->get('username');
         $password = $req->get('password');
-        dd($username, $password);
+
+
+
+        if (!auth()->attempt($req->only('username', 'password'))) {
+            return back()->with('loginError', 'Credenciales Incorrectas');
+        }
+
+        return redirect('/courses');
     }
 }
