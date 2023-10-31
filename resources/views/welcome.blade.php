@@ -73,7 +73,7 @@
             </div>
             <div class="flex flex-col justify-center items-center w-4/12 font-bold text-green-900">
                 <h3 class="text-5xl mb-10 font-bold">103</h3>
-                <p class="text-3xl font-normal">Especies marina registradas</p>
+                <p class="text-3xl font-normal">Especies marinas registradas</p>
             </div>
             <div class="flex flex-col justify-center items-center w-4/12 font-bold text-green-900">
                 <h3 class="text-5xl mb-10 font-bold">25</h3>

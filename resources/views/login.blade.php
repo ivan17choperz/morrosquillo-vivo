@@ -6,37 +6,37 @@
 
 @section('content')
     <div class="container  py-10">
-        <h4 class=" font-black   text-cyan-400 block w-full text-center">Iniciar Sesion en Morrosquillo vivo</h4>
-        <div class=" flex flex-col lg:flex-row  w-full justify-between shadow-xl rounded shadow-cyan-200 p-10 ">
+        <h3 class=" font-black   text-green-900 block w-full text-center">Inicia Sesión en Morrosquillo vivo</h3>
+        <div class=" flex flex-col lg:flex-row  w-full justify-between shadow-xl rounded shadow-green-300 p-10 ">
 
             {{-- slider --}}
             <div class="w-1/2 ">
                 <div class="slider rounded-lg">
                     <ul class="slides  rounded-lg">
                         <li>
-                            <img src="https://loremflickr.com/400/700" class="rounded-lg contrast-75">
+                            <img src="{{asset('images/16.jpg')}}" class="rounded-lg contrast-75">
                             <div class="caption center-align">
-                                <h4 class="font-bold text-white">Lorem, ipsum.</h4>
-                                <h6 class="text-white ">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, architecto?
-                                </h6>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="https://loremflickr.com/400/700" alt="">
-                            <div class="caption left-align">
-                                <h3 class="font-bold">Lorem, ipsum.</h3>
-                                <p class="ligth">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, architecto?
+                                <h4 class="font-bold text-white">El océano nos brinda vida, belleza y recursos. Debemos devolverle el favor y protegerlo con todo nuestro corazón.</h4>
+                                <p class="text-white ">
+                                    Sir Richard Branson
                                 </p>
                             </div>
                         </li>
                         <li>
-                            <img src="https://loremflickr.com/400/700" alt="">
-                            <div class="caption rigth-align">
-                                <h3 class="font-bold">Lorem, ipsum.</h3>
+                            <img src="{{asset('images/15.jpg')}}" alt="" class="rounded-lg contrast-75">
+                            <div class="caption left-align">
+                                <h4 class="font-bold">El mar es el corazón del planeta, y debemos protegerlo como si fuera nuestro propio corazón.</h4>
                                 <p class="ligth">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, architecto?
+                                    Jean-Michel Cousteau
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="{{asset('images/14.jpg')}}" alt="" class="rounded-lg contrast-75">
+                            <div class="caption rigth-align">
+                                <h4 class="font-bold">No heredamos la Tierra de nuestros antepasados, la tomamos prestada de nuestros hijos</h4>
+                                <p class="ligth">
+                                    Proverbio indígena americano
                                 </p>
                             </div>
                         </li>
@@ -47,7 +47,7 @@
             <div class=" w-1/2  p-5 ">
                 <form action="/auth/login" class="px-10" method="POST">
                     @csrf
-                    <h4 class="font-bold pb-5 text-cyan-700">Iniciar Sesión</h4>
+                    <h4 class="font-bold pb-5 text-green-900">Iniciar Sesión</h4>
                     <div class="input-field col s12 l12 pb-5">
                         <input type="text" id="username" name="username" class="validate">
                         <label for="username">Nombre de Usuario</label>
@@ -62,15 +62,15 @@
                         </p>
                     @endif
                     <button
-                        class="w-full p-3 hover:bg-cyan-800 transition-all  text-white rounded shadow text-lg font-bold bg-cyan-500 ">Iniciar
+                        class="w-full p-3 hover:bg-green-800 transition-all  text-white rounded shadow text-lg font-bold bg-green-500 ">Iniciar
                         Sesión</button>
                     <hr>
                     <div class="input-field col s12 l12 redirects-links-forms">
-                        <h6 class="font-bold text-cyan-700">¿Aun no tienes cuenta?</h6>
-                        <a href="/auth/register" class="cyan-text ">Crear Cuenta</a>
+                        <h6 class="font-bold text-green-900">¿Aun no tienes cuenta?</h6>
+                        <a href="/auth/register" class="text-green-600 ">Crear Cuenta</a>
                     </div>
                     <div class="input-field col s12 l12 redirects-links-forms">
-                        <a href="#" class="cyan-text  ">Olvidé mi constraseña</a>
+                        <a href="#" class="text-green-600  ">Olvidé mi constraseña</a>
                     </div>
 
                 </form>

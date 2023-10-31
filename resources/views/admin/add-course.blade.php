@@ -4,11 +4,11 @@
 @endsection
 
 @section('content')
-    <div class="w-full flex p-5 relative">
-        <div class="side-nav max-h-max  p-5 w-3/12 shadow-lg shadow-cyan-500 bg-cyan-400 rounded-lg text-white">
-            <h3 class="font-bold pb-3">Menu</h3>
+    <div class="w-full flex  px-5 py-10 relative">
+        <div class="side-nav h-96   w-3/12 shadow-lg shadow-green-500 bg-green-500 rounded-lg text-white">
+            <h3 class="font-bold pl-5 pb-3">Menu</h3>
             <ul class="flex flex-col   justify-between">
-                <li class="hover:bg-cyan-500 transition rounded">
+                <li class="hover:bg-green-700 px-5 transition rounded">
                     <a href="/admin/dashboard" class="flex items-center py-5  font-bold text-2xl text-white ">
                         <div class="icon">
                             <svg width='30px' height='30px' viewBox='0 0 24 24' version='1.1'
@@ -31,7 +31,7 @@
                         <p class="ml-3">Panel Principal</p>
                     </a>
                 </li>
-                <li class="hover:bg-cyan-500 transition rounded">
+                <li class="hover:bg-green-700 px-5 transition rounded">
                     <a href="/admin/courses/add" class="flex items-center py-5 font-bold text-2xl text-white ">
                         <div class="icon">
                             <svg width='30px' height='30px' viewBox='0 0 24 24' version='1.1'
@@ -54,7 +54,7 @@
                         <p class="ml-3">Cursos</p>
                     </a>
                 </li>
-                <li class="hover:bg-cyan-500 transition rounded">
+                <li class="hover:bg-green-700 px-5 transition rounded">
                     <a href="/admin/species/add" class="flex items-center py-5 font-bold text-2xl text-white ">
                         <div class="icon">
                             <svg width='30px' height='30px' viewBox='0 0 24 24' version='1.1'
@@ -79,8 +79,30 @@
                 </li>
             </ul>
         </div>
-        <div class="content p-5 w-9/12 shadow-lg ml-3 rounded-lg">
-            <h4 class="font-bold text-gray-400">Agregar curso</h4>
+        <div class="content p-5 w-6/12 flex flex-col ml-10   shadow-lg  rounded-lg">
+            <h4 class="font-bold text-green-900 mb-10">Agregar curso</h4>
+
+            <form action="" method="POST">
+                @csrf
+                <div class="input-field">
+                    <input type="text">
+                    <label for="">Escriba el titulo del curso.</label>
+                </div>
+                <div class="input-field">
+                    <textarea class="materialize-textarea"></textarea>
+                    <label for="">Escriba los detalles de la capacitación.</label>
+                </div>
+                <div class="input-field">
+                    <input type="text">
+                    <label for="">Nombre del Docente.</label>
+                </div>
+                <div class="input-field">
+                    <input type="number">
+                    <label for="">Escriba las horas estimadas a la capacitacion.</label>
+                </div>
+
+                <button class="px-10 py-5 bg-green-500 text-white text-xl font-bold rounded w-full shadow-lg">Añadir Curso</button>
+            </form>
 
 
         </div>

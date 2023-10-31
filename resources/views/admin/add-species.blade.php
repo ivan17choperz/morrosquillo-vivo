@@ -5,10 +5,10 @@
 
 @section('content')
     <div class="w-full flex p-5 relative">
-        <div class="side-nav h-96  p-5 w-3/12 shadow-lg shadow-cyan-500 bg-cyan-400 rounded-lg text-white">
-            <h3 class="font-bold pb-3">Menu</h3>
+        <div class="side-nav h-96   w-3/12 shadow-lg shadow-green-500 bg-green-500 rounded-lg text-white">
+            <h3 class="font-bold pl-5 pb-3">Menu</h3>
             <ul class="flex flex-col   justify-between">
-                <li class="hover:bg-cyan-500 transition rounded">
+                <li class="hover:bg-green-700 px-5 transition rounded">
                     <a href="/admin/dashboard" class="flex items-center py-5  font-bold text-2xl text-white ">
                         <div class="icon">
                             <svg width='30px' height='30px' viewBox='0 0 24 24' version='1.1'
@@ -31,7 +31,7 @@
                         <p class="ml-3">Panel Principal</p>
                     </a>
                 </li>
-                <li class="hover:bg-cyan-500 transition rounded">
+                <li class="hover:bg-green-700 px-5 transition rounded">
                     <a href="/admin/courses/add" class="flex items-center py-5 font-bold text-2xl text-white ">
                         <div class="icon">
                             <svg width='30px' height='30px' viewBox='0 0 24 24' version='1.1'
@@ -54,7 +54,7 @@
                         <p class="ml-3">Cursos</p>
                     </a>
                 </li>
-                <li class="hover:bg-cyan-500 transition rounded">
+                <li class="hover:bg-green-700 px-5 transition rounded">
                     <a href="/admin/species/add" class="flex items-center py-5 font-bold text-2xl text-white ">
                         <div class="icon">
                             <svg width='30px' height='30px' viewBox='0 0 24 24' version='1.1'
@@ -80,7 +80,7 @@
             </ul>
         </div>
         <div class="content p-5 w-9/12 shadow-lg ml-3 rounded-lg">
-            <h4 class="font-bold text-gray-400 pb-3">Agregar especie marina</h4>
+            <h4 class="font-bold text-green-900 pb-3">Agregar especie marina</h4>
 
             <div class="w-full flex justify-between">
                 <div class="w-5/12 px-10">
@@ -111,13 +111,13 @@
                             <label for="references">Referencias</label>
                         </div>
                         <button
-                            class="right py-2 px-7 text-lg text-white font-bold shadow-lg shadow-cyan-600 rounded-lg hover:bg-cyan-500 transition bg-cyan-400">
+                            class="right py-2 px-7 text-lg text-white font-bold shadow-lg shadow-green-700 rounded-lg hover:bg-green-700 transition bg-green-500">
                             Agregar
                         </button>
                     </form>
                 </div>
                 <div class="w-7/12 h-96 overflow-y-scroll">
-                    <table class=" text-gray-400 text-center  ">
+                    <table class=" text-green-900 text-center  ">
                         <thead>
                             <tr>
                                 <th data-field="id">Nombre Cientifico</th>
@@ -132,18 +132,18 @@
                                     <td>{{ $speice->name_scientific }}</td>
                                     <td>{{ $speice->name_common }}</td>
                                     <td >
-                                        <a href="{{ $speice->references }}" target="_blank">
+                                        <a href="{{ $speice->references }}" target="_blank" class="text-green-700">
                                             Saber mas
                                         </a>
                                     </td>
                                     <td class="flex justify-center">
                                         <a
                                             href="/admin/species/edit/{{ $speice->id }}"
-                                            class=" p-3 rounded shadow-lg shadow-yellow-500 bg-yellow-400 text-white">
+                                            class=" p-3 rounded shadow-lg shadow-green-700 bg-green-500 text-white">
                                             Actualizar
                                         </a>
                                         <a href="/admin/species/delete/{{ $speice->id }}"
-                                            class="ml-3 p-3 rounded shadow-lg shadow-red-600 bg-red-500 text-white">
+                                            class="ml-3 p-3 rounded shadow-lg shadow-green-900 bg-green-700 text-white">
                                             Eliminar
                                         </a>
                                     </td>
