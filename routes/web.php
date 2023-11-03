@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SpeciesController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,19 +24,22 @@ Route::post('/auth/register', [RegisterController::class, 'store']);
 
 //? courses
 Route::middleware(['auth'])->group(function () {
-    Route::get('/courses', [CoursesController::class, 'index']);
-    Route::get('/courses/{id_course}', [CoursesController::class, 'show']);
-    Route::get('/courses/{id_course}/learn/{id_video}', [CoursesController::class, 'detailCourse']);
+    Route::get('/cursos', [CoursesController::class, 'index']);
+    Route::get('/cursos/{id_course}', [CoursesController::class, 'show']);
+    Route::post('/cursos/regiter-student', [CoursesController::class, 'registerCourse']);
+    Route::get('/cursos/{id_course}/learn', [CoursesController::class, 'startingCourse']);
 });
 
 
 //? admin route
-Route::get('/admin/dashboard',          [DashboardController::class, 'index']);
+Route::get('/admin/dashboard',[DashboardController::class, 'index']);
 //todo-> COURSES MODULE
-Route::get('/admin/courses/add', [CoursesController::class, 'create']);
-Route::get('/admin/courses/{id_course}', [CoursesController::class, 'show']);
-Route::post('/admin/courses/add',       [CoursesController::class, 'store']);
-//Route::update('/admin/courses/{id_course}', [CoursesController::class, 'update']);
+Route::get('/admin/cursos/add',[CoursesController::class, 'create']);
+Route::get('/admin/cursos/{id_course}',[CoursesController::class, 'show']);
+Route::post('/admin/cursos/add',[CoursesController::class, 'store']);
+Route::get('/admin/cursos/{id_curso}/add/video', [VideoController::class, 'index']);
+Route::post('/admin/cursos/{id_curso}/add/video', [VideoController::class, 'store']);
+
 //todo-> SPECIES MODULE
 Route::get('/admin/species/add', [SpeciesController::class, 'create']);
 Route::post('/admin/species/add', [SpeciesController::class, 'store']);

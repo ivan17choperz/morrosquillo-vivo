@@ -12,12 +12,12 @@ class Video extends Model
     protected $fillable = [
         'title',
         'url',
-        'id_course'
+        'id_curso'
     ];
 
 
     public function course()
     {
-        return $this->belongsTo(Course::class);
+        return $this->belongsTo(Course::class,'id_curso');
     }
 }

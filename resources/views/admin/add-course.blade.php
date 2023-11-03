@@ -85,19 +85,19 @@
             <form action="" method="POST">
                 @csrf
                 <div class="input-field">
-                    <input type="text">
+                    <input type="text" name="title">
                     <label for="">Escriba el titulo del curso.</label>
                 </div>
                 <div class="input-field">
-                    <textarea class="materialize-textarea"></textarea>
+                    <textarea class="materialize-textarea" name="description"></textarea>
                     <label for="">Escriba los detalles de la capacitación.</label>
                 </div>
                 <div class="input-field">
-                    <input type="text">
+                    <input type="text" name="professional">
                     <label for="">Nombre del Docente.</label>
                 </div>
                 <div class="input-field">
-                    <input type="number">
+                    <input type="number" name="hours">
                     <label for="">Escriba las horas estimadas a la capacitacion.</label>
                 </div>
 

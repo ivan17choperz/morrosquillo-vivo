@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container  py-10">
+    <div class="container  py-10 animate__animated animate__fadeIn">
         <h3 class=" font-black   text-green-900 block w-full text-center">Inicia Sesión en Morrosquillo vivo</h3>
         <div class=" flex flex-col lg:flex-row  w-full justify-between shadow-xl rounded shadow-green-300 p-10 ">
 
