@@ -19,6 +19,8 @@
 
             <ul class="hide-on-med-and-down center ">
                 <li><a href="/cursos">Cursos</a></li>
+                <li><a href="/admin/dashboard">Dashboard</a></li>
+                <li><a href="/especies">Especies</a></li>
                 <li><a href="/">Inicio</a></li>
 
             </ul>

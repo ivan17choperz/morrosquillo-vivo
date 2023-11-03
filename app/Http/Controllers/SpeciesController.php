@@ -9,6 +9,7 @@ class SpeciesController extends Controller
 {
     public function index()
     {
+        return view('speices.all-speices');
     }
 
     public function create()
@@ -28,6 +29,7 @@ class SpeciesController extends Controller
             'clas_tax' => 'required',
             'averange_size' => 'required',
             'references' => 'required',
+            'url' => 'required',
         ]);
         Speice::create([
             'name_scientific' => $req->get('name_scientific'),
@@ -36,6 +38,7 @@ class SpeciesController extends Controller
             'clas_tax' => $req->get('clas_tax'),
             'averange_size' => $req->get('averange_size'),
             'references' => $req->get('references'),
+            'url' => $req->get('url'),
         ]);
         return redirect()->back();
     }

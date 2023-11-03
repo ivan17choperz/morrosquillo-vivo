@@ -27,6 +27,6 @@ class LoginController extends Controller
             return back()->with('loginError', 'Credenciales Incorrectas');
         }
 
-        return redirect('/courses');
+        return redirect('/cursos');
     }
 }

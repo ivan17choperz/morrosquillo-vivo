@@ -110,6 +110,10 @@
                             <input type="text" id="references" name="references">
                             <label for="references">Referencias</label>
                         </div>
+                        <div class="input-field col s12 l12 pb-6">
+                            <input type="text" id="references" name="references">
+                            <label for="url">Url de la imagen</label>
+                        </div>
                         <button
                             class="right py-2 px-7 text-lg text-white font-bold shadow-lg shadow-green-700 rounded-lg hover:bg-green-700 transition bg-green-500">
                             Agregar

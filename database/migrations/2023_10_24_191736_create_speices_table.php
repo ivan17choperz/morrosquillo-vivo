@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('clas_tax');
             $table->string('averange_size');
+            $table->string('url');
             $table->string('references');
             $table->timestamps();
         });

@@ -50,6 +50,9 @@ Route::get('/admin/species/add-image/{id}', [AddImgSpeiceController::class, 'ind
 Route::post('/admin/species/add-image', [AddImgSpeiceController::class, 'store']);
 
 
+// Especies
+Route::get('/especies', [SpeciesController::class, 'index']);
+
 //? page 404
 Route::fallback(function () {
     return view('404');
