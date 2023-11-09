@@ -5,11 +5,11 @@
 @endsection
 
 @section('content')
-    <div class="w-full mx-auto relative">
-        <div class="slider absolute">
-            <ul class="slides">
-                <li>
-                    <img src="{{ asset('images/1.jpg') }}" class="contrast-50" alt="">
+    <div class="w-full mx-auto relative  animate__animated animate__fadeIn">
+        <div class="slider absolute ">
+            <ul class="slides ">
+                <li class="">
+                    <img src="{{ asset('images/1.jpg') }}" class="contrast-50 " alt="">
                     <div class="caption left-align">
                         <h1 class="font-bold pb-5">Morrosquillo vivo</h1>
                         <h4 class="font-light pb-10">
@@ -23,7 +23,7 @@
                         </a>
                     </div>
                 </li>
-                <li>
+                <li >
                     <img src="{{ asset('images/2.jpg') }}" class="contrast-75" alt="img">
                     <div class="caption center-align flex flex-col justify-center items-center">
                         <h1 class="font-bold pb-3">Morrosquillo vivo</h1>
@@ -38,7 +38,7 @@
                         </a>
                     </div>
                 </li>
-                <li>
+                <li >
                     <img src="{{ asset('images/3.jpg') }}" class="contrast-50" alt="">
                     <div class="caption right-align">
                         <h1 class="font-bold pb-3">Morrosquillo vivo</h1>
@@ -49,7 +49,7 @@
                         </h4>
                     </div>
                 </li>
-                <li>
+                <li >
                     <img src="{{ asset('images/4.jpg') }}" class="contrast-50" alt="">
                     <div class="caption left-align">
                         <h1 class="font-bold">Morrosquillo vivo</h1>
@@ -65,17 +65,17 @@
 
 
 
-
-        <div class="px-14 py-32 w-full flex">
+        {{-- stadistics --}}
+        <div class="px-14 py-32 w-full flex ">
             <div class="flex flex-col justify-center items-center w-4/12 font-bold text-green-900">
                 <h3 class="text-5xl mb-10 font-bold">95</h3>
                 <p class="text-3xl font-normal">Cursos en nuestra web</p>
             </div>
-            <div class="flex flex-col justify-center items-center w-4/12 font-bold text-green-900">
+            <div class=" flex flex-col justify-center items-center w-4/12 font-bold text-green-900">
                 <h3 class="text-5xl mb-10 font-bold">103</h3>
                 <p class="text-3xl font-normal">Especies marinas registradas</p>
             </div>
-            <div class="flex flex-col justify-center items-center w-4/12 font-bold text-green-900">
+            <div class=" flex flex-col justify-center items-center w-4/12 font-bold text-green-900">
                 <h3 class="text-5xl mb-10 font-bold">25</h3>
                 <p class="text-3xl font-normal">Estudiantes en nuestra web</p>
             </div>
@@ -91,19 +91,19 @@
         <div class="slider mt-20 rounded-lg shadow-lg ">
             <ul class="slides rounded-lg ">
                 <li>
-                    <img src="{{ asset('images/6.jpg') }}"  class="rounded-lg" alt="imagen-speices" >
+                    <img src="{{ asset('images/6.jpg') }}" class="rounded-lg" alt="imagen-speices">
                 </li>
                 <li>
-                    <img src="{{ asset('images/7.jpg') }}"  class="rounded-lg" alt="imagen-speices" >
+                    <img src="{{ asset('images/7.jpg') }}" class="rounded-lg" alt="imagen-speices">
                 </li>
                 <li>
-                    <img src="{{ asset('images/8.jpg') }}"  class="rounded-lg" alt="imagen-speices" >
+                    <img src="{{ asset('images/8.jpg') }}" class="rounded-lg" alt="imagen-speices">
                 </li>
                 <li>
-                    <img src="{{ asset('images/9.jpg') }}"  class="rounded-lg" alt="imagen-speices" >
+                    <img src="{{ asset('images/9.jpg') }}" class="rounded-lg" alt="imagen-speices">
                 </li>
                 <li>
-                    <img src="{{ asset('images/10.jpg') }}"  class="rounded-lg" alt="imagen-speices" >
+                    <img src="{{ asset('images/10.jpg') }}" class="rounded-lg" alt="imagen-speices">
                 </li>
             </ul>
         </div>

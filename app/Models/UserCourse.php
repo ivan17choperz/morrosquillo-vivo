@@ -9,7 +9,12 @@ class UserCourse extends Model
 {
     use HasFactory;
 
-    public function course()
+    protected $fillable = [
+        'id_user',
+        'id_curso',
+    ];
+
+    public function curso()
     {
         return $this->belongsTo(Course::class);
     }
@@ -17,5 +22,10 @@ class UserCourse extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+
+    public function video(){
+        return $this->hasMany(Video::class);
     }
 }

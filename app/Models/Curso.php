@@ -9,13 +9,20 @@ class Curso extends Model
 {
     use HasFactory;
 
-    protected $fillabale = [
+    protected $fillable = [
         'title',
         'description',
         'professional',
         'hours'
     ];
 
+    public function user()
+    {
+        return $this->hasMany(UserCourse::class);
+    }
 
-
+    public function videos()
+    {
+        return $this->hasMany(Video::class,'id_curso');
+    }
 }

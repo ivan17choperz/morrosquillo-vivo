@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('user_courses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_course');
+            $table->unsignedBigInteger('id_curso');
             $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_course')->references('id')->on('courses');
+            $table->foreign('id_curso')->references('id')->on('cursos');
             $table->timestamps();
         });
     }

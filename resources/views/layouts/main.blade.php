@@ -7,18 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Morrosquillo Vivo | @yield('title')</title>
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 
 <body>
     <nav class="bg-green-500  shadow-md shadow-green-600 fixed z-50  font-bold">
         <div class="nav-wrapper  container ">
-            <a href="#" class="brand-logo center font-bold ">Morrosquillo <span
+            <a href="/" class="brand-logo center font-bold ">Morrosquillo <span
                     class="text-green-700">Vivo</span></a>
 
             <ul class="hide-on-med-and-down center ">
-                <li><a href="/courses">Cursos</a></li>
-                <li><a href="/home">Inicio</a></li>
+                <li><a href="/cursos">Cursos</a></li>
+                <li><a href="/admin/dashboard">Dashboard</a></li>
+                <li><a href="/especies">Especies</a></li>
+                <li><a href="/">Inicio</a></li>
 
             </ul>
             @guest
@@ -54,12 +57,14 @@
                 </a>
 
                 <!-- Dropdown Structure -->
-                <ul id='dropdown1' class='dropdown-content w-72 text-cyan-500 capitalize text-lg'>
-                    <li><a href="#!">Perfil</a></li>
+                <ul id='dropdown1' class='dropdown-content w-72 text-green-800 capitalize text-lg'>
+                    <li class="text-green-800">
+                        <a href="#!" class="w-full text-green-800 p-3">Perfil</a>
+                    </li>
                     <li>
                         <form action="/auth/logOut" method="post">
                             @csrf
-                            <button type="submit" class="w-full text-red-700 p-3">Cerrar Cesión</button>
+                            <button type="submit" class="w-full text-green-900 p-3">Cerrar Cesión</button>
                         </form>
                     </li>
                 </ul>

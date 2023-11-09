@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="hover:bg-green-700 px-5 transition rounded">
-                    <a href="/admin/courses/add" class="flex items-center py-5 font-bold text-2xl text-white ">
+                    <a href="/admin/cursos/add" class="flex items-center py-5 font-bold text-2xl text-white ">
                         <div class="icon">
                             <svg width='30px' height='30px' viewBox='0 0 24 24' version='1.1'
                                 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
@@ -79,32 +79,76 @@
                 </li>
             </ul>
         </div>
-        <div class="content p-5 w-6/12 flex flex-col ml-10   shadow-lg  rounded-lg">
-            <h4 class="font-bold text-green-900 mb-10">Agregar curso</h4>
+        <div class="content p-5 w-full  flex  ml-5 justify-between ">
 
-            <form action="" method="POST">
+            <form action="" method="POST" class="shadow-lg p-5 rounded w-6/12  ">
                 @csrf
+                <h4 class="font-bold text-green-900 mb-10">Agregar curso</h4>
+
                 <div class="input-field">
-                    <input type="text">
-                    <label for="">Escriba el titulo del curso.</label>
+                    <input type="text" id="title" name="title">
+                    <label for="title">Escriba el titulo del curso.</label>
                 </div>
                 <div class="input-field">
-                    <textarea class="materialize-textarea"></textarea>
-                    <label for="">Escriba los detalles de la capacitación.</label>
+                    <textarea class="materialize-textarea" id="description" name="description"></textarea>
+                    <label for="description">Escriba los detalles de la capacitación.</label>
                 </div>
                 <div class="input-field">
-                    <input type="text">
-                    <label for="">Nombre del Docente.</label>
+                    <input type="text" id="professional" name="professional">
+                    <label for="professional">Nombre del Docente.</label>
                 </div>
                 <div class="input-field">
-                    <input type="number">
-                    <label for="">Escriba las horas estimadas a la capacitacion.</label>
+                    <input type="number" id="hours" name="hours">
+                    <label for="hours">Escriba las horas estimadas a la capacitacion.</label>
                 </div>
 
-                <button class="px-10 py-5 bg-green-500 text-white text-xl font-bold rounded w-full shadow-lg">Añadir Curso</button>
+                <button class="px-10 py-5 bg-green-500 text-white text-xl font-bold rounded w-full shadow-lg">Añadir
+                    Curso</button>
             </form>
 
+            <div class=" w-5/12 h-96 shadow-lg p-5  overflow-y-scroll">
+                <h4 class="font-bold text-green-900">Cursos Agregados</h4>
+                <ul class="mt-5 text-green-900">
+                    @if ($cursos->count() > 0)
+                        @foreach ($cursos as $curso)
+                            <li class="flex flex-col border border-green-900 rounded-lg p-5 mt-5">
+                                <h5 class="font-bold">{{$curso->title}}</h5>
+                                <p class="font-bold">Profesional: <span class="font-normal">{{$curso->professional}}</span></p>
+                                <p class="font-bold">Horas del curso: <span class="font-normal">{{$curso->hours}}</span></p>
+                                <div class="flex mt-3">
 
+                                    <a href="/admin/cursos/edit/{{$curso->id}}"
+                                        class=" p-3 flex items-center rounded shadow-lg transition-all hover:bg-yellow-500 shadow-green-700 bg-green-500 text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="16"
+                                            height="16" viewBox="0 0 24 24">
+                                            <path fill="none" stroke="#ffffff" stroke-width="2"
+                                                d="M1.75 16.002C3.353 20.098 7.338 23 12 23c6.075 0 11-4.925 11-11m-.75-4.002C20.649 3.901 16.663 1 12 1C5.925 1 1 5.925 1 12m8 4H1v8M23 0v8h-8" />
+                                        </svg>
+                                        Actualizar
+                                    </a>
+
+
+                                    <form action="/admin/cursos/delete/{{$curso->id}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button
+                                            class="ml-3 p-3 rounded shadow-lg flex items-center hover:bg-red-600 transition-all  shadow-green-900 bg-green-700 text-white">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="20"
+                                                height="20" viewBox="0 0 24 24">
+                                                <path fill="#ffffff"
+                                                    d="M7 21q-.825 0-1.413-.588T5 19V6q-.425 0-.713-.288T4 5q0-.425.288-.713T5 4h4q0-.425.288-.713T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5q0 .425-.288.713T19 6v13q0 .825-.588 1.413T17 21H7ZM17 6H7v13h10V6ZM9 17h2V8H9v9Zm4 0h2V8h-2v9ZM7 6v13V6Z" />
+                                            </svg>
+                                            Eliminar
+                                        </button>
+                                    </form>
+                                </div>
+                            </li>
+                        @endforeach
+                    @else
+                            <li>No hay Cursos Registrados</li>
+                    @endif
+                </ul>
+            </div>
         </div>
     </div>
 @endsection

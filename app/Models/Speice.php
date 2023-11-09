@@ -15,11 +15,12 @@ class Speice extends Model
         'description',
         'clas_tax',
         'averange_size',
+        'url',
         'references'
     ];
 
     public function images()
     {
-        return $this->hasMany(ImageSpeice::class);
+        return $this->belongsTo(ImageSpeice::class);
     }
 }

@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="hover:bg-green-700 px-5 transition rounded">
-                    <a href="/admin/courses/add" class="flex items-center py-5 font-bold text-2xl text-white ">
+                    <a href="/admin/cursos/add" class="flex items-center py-5 font-bold text-2xl text-white ">
                         <div class="icon">
                             <svg width='30px' height='30px' viewBox='0 0 24 24' version='1.1'
                                 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
