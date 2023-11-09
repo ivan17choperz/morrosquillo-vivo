@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="hover:bg-green-700 px-5 transition rounded">
-                    <a href="/admin/courses/add" class="flex items-center py-5 font-bold text-2xl text-white ">
+                    <a href="/admin/cursos/add" class="flex items-center py-5 font-bold text-2xl text-white ">
                         <div class="icon">
                             <svg width='30px' height='30px' viewBox='0 0 24 24' version='1.1'
                                 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
@@ -111,11 +111,16 @@
                             <label for="references">Referencias</label>
                         </div>
                         <div class="input-field col s12 l12 pb-6">
-                            <input type="text" id="references" name="references">
+                            <input type="text" id="url" name="url">
                             <label for="url">Url de la imagen</label>
                         </div>
                         <button
-                            class="right py-2 px-7 text-lg text-white font-bold shadow-lg shadow-green-700 rounded-lg hover:bg-green-700 transition bg-green-500">
+                            class="right py-2 px-7 text-lg text-white font-bold shadow-lg flex items-center shadow-green-700 rounded-lg hover:bg-green-700 transition bg-green-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="mr-3"
+                                viewBox="0 0 32 32">
+                                <path fill="#ffffff"
+                                    d="m27.71 9.29l-5-5A1 1 0 0 0 22 4H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V10a1 1 0 0 0-.29-.71ZM12 6h8v4h-8Zm8 20h-8v-8h8Zm2 0v-8a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v8H6V6h4v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6.41l4 4V26Z" />
+                            </svg>
                             Agregar
                         </button>
                     </form>
@@ -130,26 +135,39 @@
                                 <th data-field="price">Acciones</th>
                             </tr>
                         </thead>
-                        <tbody >
+                        <tbody>
                             @foreach ($speices as $speice)
                                 <tr>
                                     <td>{{ $speice->name_scientific }}</td>
                                     <td>{{ $speice->name_common }}</td>
-                                    <td >
+                                    <td>
                                         <a href="{{ $speice->references }}" target="_blank" class="text-green-700">
                                             Saber mas
                                         </a>
                                     </td>
                                     <td class="flex justify-center">
-                                        <a
-                                            href="/admin/species/edit/{{ $speice->id }}"
-                                            class=" p-3 rounded shadow-lg shadow-green-700 bg-green-500 text-white">
+                                        <a href="/admin/species/edit/{{ $speice->id }}"
+                                            class=" p-3 flex items-center rounded shadow-lg transition-all hover:bg-yellow-500 shadow-green-700 bg-green-500 text-white">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="16"
+                                                height="16" viewBox="0 0 24 24">
+                                                <path fill="none" stroke="#ffffff" stroke-width="2"
+                                                    d="M1.75 16.002C3.353 20.098 7.338 23 12 23c6.075 0 11-4.925 11-11m-.75-4.002C20.649 3.901 16.663 1 12 1C5.925 1 1 5.925 1 12m8 4H1v8M23 0v8h-8" />
+                                            </svg>
                                             Actualizar
                                         </a>
-                                        <a href="/admin/species/delete/{{ $speice->id }}"
-                                            class="ml-3 p-3 rounded shadow-lg shadow-green-900 bg-green-700 text-white">
-                                            Eliminar
-                                        </a>
+                                        <form action="/admin/species/delete/{{ $speice->id }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button
+                                                class="ml-3 p-3 rounded shadow-lg flex items-center hover:bg-red-600 transition-all  shadow-green-900 bg-green-700 text-white">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="20"
+                                                    height="20" viewBox="0 0 24 24">
+                                                    <path fill="#ffffff"
+                                                        d="M7 21q-.825 0-1.413-.588T5 19V6q-.425 0-.713-.288T4 5q0-.425.288-.713T5 4h4q0-.425.288-.713T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5q0 .425-.288.713T19 6v13q0 .825-.588 1.413T17 21H7ZM17 6H7v13h10V6ZM9 17h2V8H9v9Zm4 0h2V8h-2v9ZM7 6v13V6Z" />
+                                                </svg>
+                                                Eliminar
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

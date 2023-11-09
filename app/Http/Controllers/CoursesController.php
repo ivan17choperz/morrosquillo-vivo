@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-use function Ramsey\Uuid\v1;
+
 
 class CoursesController extends Controller
 {
@@ -25,10 +25,19 @@ class CoursesController extends Controller
     //todo-> creacion de un curso
     public function create()
     {
-        return view('admin.add-course');
+        $cursos = Curso::get();
+        return view('admin.add-course', ['cursos' => $cursos]);
     }
     public function store(Request $req)
     {
+        $req->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'professional' => 'required',
+            'hours' => 'required',
+        ]);
+
+
         $curso = Curso::create([
             'title' => $req->get('title'),
             'description' => $req->get('description'),
@@ -93,16 +102,40 @@ class CoursesController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $curso = Curso::find($id);
+        return view('admin.update-course', [
+            'curso' => $curso
+        ]);
     }
 
-    public function update(Request $request, string $id)
+    public function update(Request $req, string $id)
     {
-        //
+        $curso = Curso::find($id);
+
+        if ($curso) {
+            $req->validate([
+                'title' => 'required',
+                'description' => 'required',
+                'professional' => 'required',
+                'hours' => 'required',
+            ]);
+
+            Curso::find($id)->update([
+                'title' => $req->get('title'),
+                'description' => $req->get('description'),
+                'professional' => $req->get('professional'),
+                'hours' => $req->get('hours'),
+            ]);
+            return redirect('/admin/cursos/add');
+        }
+
+        return back();
+
     }
 
     public function destroy(string $id)
     {
-        //
+        Curso::destroy($id);
+        return redirect('/admin/cursos/add');
     }
 }

@@ -8,7 +8,9 @@
     <div class="  container w-full flex justify-between">
 
         <div class="w-6/12 p-10">
-            <h3 class="pb-10 font-bold">Actualizar Especie</h3>
+            <div class="flex items-center">
+                <h4 class=" font-bold text-green-900">Actualizar Especie</h4>
+            </div>
             <form action="/admin/species/add" method="POST" class="w-full  ">
                 @csrf
                 <div class="input-field col s12 l12 pb-6">
@@ -43,8 +45,20 @@
                 </button>
             </form>
         </div>
-        <div class="w-6 p-5">
-
+        <div class="w-6/12 p-5">
+            <img src="{{ $speice->url }}" alt="" class="rounded-lg shadow-xl mt-5" />
+            <a href="/admin/species/add"
+                class="bg-green mt-5 flex items-center text-xl font-bold bg-green-500 max-w-max rounded-lg shadow-lg hover:bg-green-700 p-5 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="mr-3 " viewBox="0 0 48 48">
+                    <mask id="IconifyId18bafd3602362deef2">
+                        <path fill="#fff" fill-rule="evenodd" stroke="#fff" stroke-linejoin="round" stroke-width="4"
+                            d="M44 40.836c-4.893-5.973-9.238-9.362-13.036-10.168c-3.797-.805-7.412-.927-10.846-.365V41L4 23.545L20.118 7v10.167c6.349.05 11.746 2.328 16.192 6.833c4.445 4.505 7.009 10.117 7.69 16.836Z"
+                            clip-rule="evenodd" />
+                    </mask>
+                    <path fill="#ffffff" d="M0 0h48v48H0z" mask="url(#IconifyId18bafd3602362deef2)" />
+                </svg>
+                cancelar
+            </a>
         </div>
     </div>
 @endsection

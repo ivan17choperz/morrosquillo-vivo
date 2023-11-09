@@ -9,7 +9,8 @@ class SpeciesController extends Controller
 {
     public function index()
     {
-        return view('speices.all-speices');
+        $speices = Speice::get();
+        return view('speices.all-speices', ['speices' => $speices]);
     }
 
     public function create()
@@ -31,6 +32,8 @@ class SpeciesController extends Controller
             'references' => 'required',
             'url' => 'required',
         ]);
+
+
         Speice::create([
             'name_scientific' => $req->get('name_scientific'),
             'name_common' => $req->get('name_common'),
@@ -59,5 +62,7 @@ class SpeciesController extends Controller
 
     public function destroy($id)
     {
+        Speice::find($id)->delete();
+        return redirect()->back();
     }
 }

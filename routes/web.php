@@ -32,22 +32,23 @@ Route::middleware(['auth'])->group(function () {
 
 
 //? admin route
-Route::get('/admin/dashboard',[DashboardController::class, 'index']);
+Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 //todo-> COURSES MODULE
-Route::get('/admin/cursos/add',[CoursesController::class, 'create']);
-Route::get('/admin/cursos/{id_course}',[CoursesController::class, 'show']);
-Route::post('/admin/cursos/add',[CoursesController::class, 'store']);
+Route::get('/admin/cursos/add', [CoursesController::class, 'create']);
+Route::post('/admin/cursos/add', [CoursesController::class, 'store']);
+Route::get('/admin/cursos/edit/{id_curso}', [CoursesController::class, 'edit']);
+Route::put('/admin/cursos/update/{id_curso}', [CoursesController::class, 'update']);
+Route::delete('/admin/cursos/delete/{id_curso}', [CoursesController::class, 'destroy']);
+//add videos of course
 Route::get('/admin/cursos/{id_curso}/add/video', [VideoController::class, 'index']);
 Route::post('/admin/cursos/{id_curso}/add/video', [VideoController::class, 'store']);
 
 //todo-> SPECIES MODULE
 Route::get('/admin/species/add', [SpeciesController::class, 'create']);
 Route::post('/admin/species/add', [SpeciesController::class, 'store']);
-Route::get('admin/species/edit/{id_species}', [SpeciesController::class, 'show']);
-Route::put('admin/species/edit/{id_species}', [SpeciesController::class, 'update']);
-Route::delete('admin/species/delete/{id_species}', [SpeciesController::class, 'detroy']);
-Route::get('/admin/species/add-image/{id}', [AddImgSpeiceController::class, 'index']);
-Route::post('/admin/species/add-image', [AddImgSpeiceController::class, 'store']);
+Route::get('/admin/species/edit/{id_species}', [SpeciesController::class, 'show']);
+Route::put('/admin/species/edit/{id_species}', [SpeciesController::class, 'update']);
+Route::delete('/admin/species/delete/{id_species}', [SpeciesController::class, 'destroy']);
 
 
 // Especies
@@ -55,5 +56,5 @@ Route::get('/especies', [SpeciesController::class, 'index']);
 
 //? page 404
 Route::fallback(function () {
-    return view('404');
+    return view('welcome');
 });
