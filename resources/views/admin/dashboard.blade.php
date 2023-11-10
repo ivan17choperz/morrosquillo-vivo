@@ -81,6 +81,21 @@
         </div>
         <div class="content p-5 w-9/12 shadow-lg ml-3 rounded-lg">
             <h4 class="font-bold text-green-900">Estadisticas</h4>
+            <div class="flex flex-wrap w-full">
+
+                <div class="content w-6/12 p-5">
+                    <h5 class="font-bold text-green-600">Especies en plataforma</h5>
+                    <canvas id="chart_speices"></canvas>
+                </div>
+                <div class="content w-6/12 p-5">
+                    <h5 class="font-bold text-green-600">Registro de Estudiantes</h5>
+                    <canvas id="chart_students"></canvas>
+                </div>
+                <div class="content w-6/12 p-5">
+                    <h5 class="font-bold text-green-600">Cantidad de cursos</h5>
+                    <canvas id="chart_cursos"></canvas>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

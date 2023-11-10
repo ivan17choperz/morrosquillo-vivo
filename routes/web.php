@@ -1,13 +1,11 @@
 <?php
 
-use App\Http\Controllers\AddImgSpeiceController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SpeciesController;
-use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,6 +31,10 @@ Route::middleware(['auth'])->group(function () {
 
 //? admin route
 Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+Route::get('/admin/dashboard/get-speices', [DashboardController::class, 'getDataSpeicesChart']);
+Route::get('/admin/dashboard/get-students', [DashboardController::class, 'getDataStudentsChart']);
+Route::get('/admin/dashboard/get-cursos', [DashboardController::class, 'getDataCoursesChart']);
+
 //todo-> COURSES MODULE
 Route::get('/admin/cursos/add', [CoursesController::class, 'create']);
 Route::post('/admin/cursos/add', [CoursesController::class, 'store']);
@@ -40,8 +42,8 @@ Route::get('/admin/cursos/edit/{id_curso}', [CoursesController::class, 'edit']);
 Route::put('/admin/cursos/update/{id_curso}', [CoursesController::class, 'update']);
 Route::delete('/admin/cursos/delete/{id_curso}', [CoursesController::class, 'destroy']);
 //add videos of course
-Route::get('/admin/cursos/{id_curso}/add/video', [VideoController::class, 'index']);
-Route::post('/admin/cursos/{id_curso}/add/video', [VideoController::class, 'store']);
+// Route::get('/admin/cursos/{id_curso}/add/video', [VideoController::class, 'index']);
+// Route::post('/admin/cursos/{id_curso}/add/video', [VideoController::class, 'store']);
 
 //todo-> SPECIES MODULE
 Route::get('/admin/species/add', [SpeciesController::class, 'create']);
