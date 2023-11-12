@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SpeciesController;
+use App\Http\Middleware\VerifyRoleUser;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,7 +31,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 //? admin route
-Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'role:1']);
 Route::get('/admin/dashboard/get-speices', [DashboardController::class, 'getDataSpeicesChart']);
 Route::get('/admin/dashboard/get-students', [DashboardController::class, 'getDataStudentsChart']);
 Route::get('/admin/dashboard/get-cursos', [DashboardController::class, 'getDataCoursesChart']);
