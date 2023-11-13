@@ -18,7 +18,7 @@ Route::get('/', function () {
     $speices = Speice::count();
     $cursos  = Curso::count();
 
-    return view('welcome',[
+    return view('welcome', [
         'users'   => $users,
         'speices' => $speices,
         'cursos'  => $cursos,
@@ -43,7 +43,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 //? admin route
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'role:1']);
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware([VerifyRoleUser::class]);
 Route::get('/admin/dashboard/get-speices', [DashboardController::class, 'getDataSpeicesChart']);
 Route::get('/admin/dashboard/get-students', [DashboardController::class, 'getDataStudentsChart']);
 Route::get('/admin/dashboard/get-cursos', [DashboardController::class, 'getDataCoursesChart']);
