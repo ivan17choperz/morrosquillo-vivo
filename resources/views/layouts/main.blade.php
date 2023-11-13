@@ -14,12 +14,18 @@
 <body>
     <nav class="bg-green-500  shadow-md shadow-green-600 fixed z-50  font-bold">
         <div class="nav-wrapper  container ">
-            <a href="/" class="brand-logo center font-bold ">Morrosquillo <span
-                    class="text-green-700">Vivo</span></a>
+            @guest
+                <a href="/" class="brand-logo center font-bold ">Morrosquillo
+                    <span class="text-green-700">Vivo</span>
+                </a>
+            @endguest
+
 
             <ul class="hide-on-med-and-down center ">
                 <li><a href="/cursos">Cursos</a></li>
-                <li><a href="/admin/dashboard">Dashboard</a></li>
+                @if (optional(auth()->user())->rol_id == 1)
+                    <li><a href="/admin/dashboard">Dashboard</a></li>
+                @endif
                 <li><a href="/especies">Especies</a></li>
                 <li><a href="/">Inicio</a></li>
 

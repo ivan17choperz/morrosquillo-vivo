@@ -17,7 +17,7 @@ class VerifyRoleUser
     {
 
         if (!$request->user()) {
-            return redirect('/login');
+            return redirect('/auth/login');
         }
 
         if ($request->user()->rol_id != 1) {
