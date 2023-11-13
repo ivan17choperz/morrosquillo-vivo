@@ -7,10 +7,22 @@ use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SpeciesController;
 use App\Http\Middleware\VerifyRoleUser;
+use App\Models\Curso;
+use App\Models\Speice;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $users   = User::count();
+    $speices = Speice::count();
+    $cursos  = Curso::count();
+
+    return view('welcome',[
+        'users'   => $users,
+        'speices' => $speices,
+        'cursos'  => $cursos,
+    ]);
 });
 
 //? routes login

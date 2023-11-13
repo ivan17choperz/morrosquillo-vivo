@@ -13,16 +13,16 @@ class VerifyRoleUser
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, $role): Response
+    public function handle(Request $request, Closure $next): Response
     {
 
         if (!$request->user()) {
             return redirect('/login');
         }
 
-        if ($request->user()->role != $role) {
+        if ($request->user()->rol_id != 1) {
             // Redirigir al usuario a la página de inicio de sesión
-            return redirect('/auth/login');
+            return redirect('/cursos');
         }
 
         return $next($request);

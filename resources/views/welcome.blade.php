@@ -68,15 +68,15 @@
         {{-- stadistics --}}
         <div class="px-14 py-32 w-full flex ">
             <div class="flex flex-col justify-center items-center w-4/12 font-bold text-green-900">
-                <h3 class="text-5xl mb-10 font-bold">95</h3>
+                <h3 class="text-5xl mb-10 font-bold">{{$cursos}}</h3>
                 <p class="text-3xl font-normal">Cursos en nuestra web</p>
             </div>
             <div class=" flex flex-col justify-center items-center w-4/12 font-bold text-green-900">
-                <h3 class="text-5xl mb-10 font-bold">103</h3>
+                <h3 class="text-5xl mb-10 font-bold">{{$speices}}</h3>
                 <p class="text-3xl font-normal">Especies marinas registradas</p>
             </div>
             <div class=" flex flex-col justify-center items-center w-4/12 font-bold text-green-900">
-                <h3 class="text-5xl mb-10 font-bold">25</h3>
+                <h3 class="text-5xl mb-10 font-bold">{{$users}}</h3>
                 <p class="text-3xl font-normal">Estudiantes en nuestra web</p>
             </div>
         </div>
