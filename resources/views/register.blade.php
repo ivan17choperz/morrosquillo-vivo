@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
-    <div class=" text-green-900 w-full flex items-center animate__animated animate__fadeIn">
-        <div class="w-6/12 pl-20">
+    <div class=" text-green-900 w-full flex flex-col-reverse lg:flex-row items-center animate__animated animate__fadeIn">
+        <div class="w-full lg:w-6/12 hide-on-med-and-down  lg:pl-20">
             <div class="slider rounded-lg">
                 <ul class="slides  rounded-lg">
                     <li>
@@ -39,7 +39,7 @@
                 </ul>
             </div>
         </div>
-        <div class="w-6/12 p-20">
+        <div class="w-full lg:w-6/12 p-5  lg:p-20">
             <form id="registerForm" action="/auth/register" method="POST" class="p-10 z-depth-2" autocomplete="off">
                 @csrf
                 <h4 class="font-bold">Registrate ahora!</h4>
@@ -56,7 +56,7 @@
                     <select name="sex">
                         <option value="---" disabled selected>Sexo</option>
                         <option value="male">Hombre</option>
-                        <option value="famale">Mujer</option>
+                        <option value="female">Mujer</option>
                     </select>
                 </div>
                 <div class="input-field col s12 l6">
@@ -79,7 +79,7 @@
                     <label for="nameuser">Nombre de Ususario</label>
                 </div>
                 <div class="input-field col s12">
-                    <input type="password" id="password" name="password" class="materialize-textarea"></input>
+                    <input type="password" id="password" name="password" class="validate">
                     <label for="password">Contraseña</label>
                 </div>
                 <div class="input-field col s12">

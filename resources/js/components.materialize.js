@@ -30,9 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
     var instances = M.Parallax.init(elems);
 });
 
-
 // collapsible
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible');
+document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".collapsible");
     var instances = M.Collapsible.init(elems);
-  });
+});
+
+//sidenav
+
+document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".sidenav");
+    var instances = M.Sidenav.init(elems);
+});

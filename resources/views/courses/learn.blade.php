@@ -11,9 +11,16 @@
                             {{ $loop->index + 1 }}. {{ $video->title }}
                         </div>
                         <div class="collapsible-body flex w-full justify-center items-center">
-                            <iframe width="1013" height="570" src="{{ $video->url }}" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
+                            <div class="video-containter">
+                                <iframe class="hide-on-med-and-down" width="1013" height="570" src="{{ $video->url }}" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen>
+                                </iframe>
+                                <iframe class="w-full"  src="{{ $video->url }}" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
                         </div>
                     </li>
                 @endforeach

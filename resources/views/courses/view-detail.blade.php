@@ -14,15 +14,16 @@
                 <img src="{{ asset('images/17.jpg') }}" alt="">
             </div>
         </div>
-        <div class="container flex items-center  justify-between p-10 bg-white">
-            <div class="w-9/12 text-start">
-                <h3 class="font-bold text-green-900">{{ $curso->title }}</h3>
+        <div class="container flex flex-col items-center  justify-between p-3  lg:p-10 bg-white">
+            <div class="w-full text-center  lg:w-9/12 lg:text-start">
+                <h3 class="font-bold text-green-900 hide-on-med-and-down">{{ $curso->title }}</h3>
+                <h4 class="font-bold text-center      text-green-900">{{ $curso->title }}</h4>
                 <p class="text-xl text-green-900">{{ $curso->description }}</p>
 
                 <h5 class="font-bold text-green-900">Horas estimadas: <span  class="font-normal text-xl">{{$curso->hours}}Hrs</span></h5>
                 <h5 class="font-bold text-green-900">Docente: <span  class="font-normal text-xl">{{$curso->professional}}</span></h5>
             </div>
-            <div class="w-3/12">
+            <div class="w-full lg:w-3/12">
                 <form action="/cursos/regiter-student" class="w-full" method="POST">
                     @csrf
                     <input type="hidden" name="id_user" value="{{ $user_id }}">

@@ -26,16 +26,18 @@ class RegisterController extends Controller
 
         $res = User::create(
             [
-                'name'    => $req->get('name'),
-                'surname' => $req->get('surname'),
-                'sex'     => $req->get('sex'),
-                'address' => $req->get('address'),
-                'phone'   => $req->get('phone'),
-                'email'   => $req->get('email'),
+                'name'     => $req->get('name'),
+                'surname'  => $req->get('surname'),
+                'sex'      => $req->get('sex'),
+                'address'  => $req->get('address'),
+                'phone'    => $req->get('phone'),
+                'email'    => $req->get('email'),
                 'username' => $req->get('nameuser'),
                 'password' => $req->get('password'),
+                'rol_id' => 2
             ]
         );
+
 
         return redirect('/auth/login');
     }

@@ -31,3 +31,8 @@
     color: white !important;
 }
 
+
+.sidenav-overlay{
+    opacity: 0 !important;
+}
+

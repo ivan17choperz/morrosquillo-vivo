@@ -13,9 +13,41 @@
 
 <body>
     <nav class="bg-green-500  shadow-md shadow-green-600 fixed z-50  font-bold">
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="images/office.jpg">
+                    </div>
+                    <a href="#user"><img class="circle" src="{{ asset('images-icons/user-icon.png') }}"></a>
+                    <a href="#name"><span class="white-text name">{{ optional(auth()->user())->username }}</span></a>
+                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                </div>
+            </li>
+            <li>
+                <a href="/">
+                    Inicio
+                </a>
+            </li>
+            <li>
+                <a href="#!">
+                    Curso
+                </a>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        </ul>
+
+        <a href="#" data-target="slide-out" class="sidenav-trigger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16M4 6h16M4 18h16"/></svg>
+        </a>
+
         <div class="nav-wrapper  container ">
             @guest
-                <a href="/" class="brand-logo center font-bold ">Morrosquillo
+                <a href="/" class="brand-logo center text-center hide-on-med-and-down ">Morrosquillo
                     <span class="text-green-700">Vivo</span>
                 </a>
             @endguest

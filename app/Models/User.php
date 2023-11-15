@@ -26,6 +26,7 @@ class User extends Authenticatable
         'email',
         'username',
         'password',
+        'rol_id',
     ];
 
     /**
@@ -49,15 +50,18 @@ class User extends Authenticatable
     ];
 
 
-    protected $attributes = [
-        'rol_id' => 2
-    ];
+    // protected $attributes = [
+    //     'rol_id' => 2
+    // ];
 
-    public function user_rol()
+    public function userRol()
     {
-        return $this->hasOne(userRol::class);
+        return $this->belongsTo(UserRol::class, 'rol_id');
     }
-    public function cursos (){
+
+
+    public function cursos()
+    {
         return $this->hasMany(UserCourse::class);
     }
 }

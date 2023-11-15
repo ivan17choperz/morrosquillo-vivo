@@ -6,11 +6,12 @@
 
 @section('content')
     <div class="container  py-10 animate__animated animate__fadeIn">
-        <h3 class=" font-black   text-green-900 block w-full text-center">Inicia Sesión en Morrosquillo vivo</h3>
-        <div class=" flex flex-col lg:flex-row  w-full justify-between shadow-xl rounded shadow-green-300 p-10 ">
+        <h3 class=" font-black   text-green-900 block w-full text-center hide-on-small-only">Inicia Sesión en Morrosquillo vivo</h3>
+        <h5 class=" font-black   text-green-900 block w-full text-center">Inicia Sesión en Morrosquillo vivo</h5>
+        <div class=" flex flex-col-reverse lg:flex-row  w-full justify-between shadow-xl rounded shadow-green-300 lg:p-10 ">
 
             {{-- slider --}}
-            <div class="w-1/2 ">
+            <div class="w-full lg:w-1/2 hide-on-small-only ">
                 <div class="slider rounded-lg">
                     <ul class="slides  rounded-lg">
                         <li>
@@ -44,7 +45,7 @@
                 </div>
             </div>
             {{-- form --}}
-            <div class=" w-1/2  p-5 ">
+            <div class="w-full lg:w-1/2  p-5 ">
                 <form action="/auth/login" class="px-10" method="POST">
                     @csrf
                     <h4 class="font-bold pb-5 text-green-900">Iniciar Sesión</h4>
